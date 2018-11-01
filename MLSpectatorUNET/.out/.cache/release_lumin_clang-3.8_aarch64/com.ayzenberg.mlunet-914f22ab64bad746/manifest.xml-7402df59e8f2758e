@@ -1,0 +1,15 @@
+<manifest xmlns:ml="magicleap" ml:developer_id="ac45d6d8-3374-44d6-a51d-1b1b927be010" ml:package="com.ayzenberg.mlunet" ml:version_code="1" ml:version_name="">
+  <application ml:sdk_version="1.0" ml:visible_name="MLSpectatorUNET">
+    <uses-privilege ml:name="LowLatencyLightwear" />
+    <uses-privilege ml:name="ControllerPose" />
+    <uses-privilege ml:name="GesturesConfig" />
+    <uses-privilege ml:name="GesturesSubscribe" />
+    <uses-privilege ml:name="Internet" />
+    <uses-privilege ml:name="LocalAreaNetwork" />
+    <uses-privilege ml:name="WorldReconstruction" />
+    <uses-privilege ml:name="VoiceInput" />
+    <component ml:binary_name="bin/Player.elf" ml:name=".fullscreen" ml:type="Fullscreen" ml:visible_name="MLSpectatorUNET">
+      <icon ml:model_folder="Icon/Model" ml:portal_folder="Icon/Portal" />
+    </component>
+  </application>
+</manifest>
