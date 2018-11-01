@@ -1,6 +1,4 @@
-﻿#if UNITY_IOS
-
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -23,7 +21,7 @@ namespace UnityEngine.XR.iOS
 		private GCHandle m_pinnedYArray;
 		private GCHandle m_pinnedUVArray;
 
-#if !UNITY_EDITOR
+		#if !UNITY_EDITOR
 
 		public void Start()
 		{
@@ -109,8 +107,6 @@ namespace UnityEngine.XR.iOS
 			connectToEditor.SendToEditor (ConnectionMessageIds.screenCaptureUVMsgId, UVByteArrayForFrame(1-currentFrameIndex));
 			
 		}
-#endif
+		#endif
 	}
 }
-
-#endif

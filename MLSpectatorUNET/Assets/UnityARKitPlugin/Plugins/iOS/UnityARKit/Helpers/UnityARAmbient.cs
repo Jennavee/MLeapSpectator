@@ -1,5 +1,3 @@
-#if UNITY_IOS
-
 using System.Runtime.InteropServices;
 using UnityEngine.XR.iOS;
 
@@ -36,4 +34,3 @@ namespace UnityEngine.XR.iOS
 		}
     }
 }
-#endif

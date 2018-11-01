@@ -1,6 +1,4 @@
-﻿#if UNITY_IOS
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
@@ -9,7 +7,7 @@ using Utils;
 
 namespace UnityEngine.XR.iOS
 {
-#if UNITY_EDITOR
+	#if UNITY_EDITOR
 	public class ARFaceGeometry
 	{
 		private serializableFaceGeometry sFaceGeometry;
@@ -49,7 +47,5 @@ namespace UnityEngine.XR.iOS
 		public Dictionary<string, float> blendShapes { get { return m_sfa.arBlendShapes; } }
 
 	}
-#endif
+	#endif
 }
-
-#endif

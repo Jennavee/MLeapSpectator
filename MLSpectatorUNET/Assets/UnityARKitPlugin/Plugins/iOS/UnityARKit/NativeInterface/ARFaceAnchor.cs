@@ -1,6 +1,4 @@
-﻿#if UNITY_IOS
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
 using System;
@@ -95,7 +93,7 @@ namespace UnityEngine.XR.iOS
 
 	};
 
-#if !UNITY_EDITOR
+	#if !UNITY_EDITOR
 	public class ARFaceGeometry
 	{
 		private UnityARFaceGeometry uFaceGeometry;
@@ -219,7 +217,5 @@ namespace UnityEngine.XR.iOS
 			blendshapesDictionary.Add(key, value);
 		}
 	}
-#endif
+	#endif
 }
-
-#endif

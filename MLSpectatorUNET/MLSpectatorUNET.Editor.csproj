@@ -293,6 +293,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>/Users/jenna/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/jenna/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -311,18 +314,6 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>/Users/jenna/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="LuminUnityEditor">
-      <HintPath>Assets/MLSpectatorML/MagicLeap/Libs/Editor/LuminUnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="MSA.Runtime">
-      <HintPath>Assets/MLSpectatorML/MagicLeap/Soundfield/MSA.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="LuminUnity">
-      <HintPath>Assets/MLSpectatorML/MagicLeap/Libs/LuminUnity.dll</HintPath>
-    </Reference>
-    <Reference Include="MSA.Editor">
-      <HintPath>Assets/MLSpectatorML/MagicLeap/Soundfield/Editor/MSA.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity2017/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -337,36 +328,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\Editor\MLImageTrackerBehaviorEditor.cs" />
-    <Compile Include="Assets\MLSpectatorML\MagicLeap\Scripts\Editor\BuildMabuWindow.cs" />
-    <Compile Include="Assets\MLSpectatorML\MagicLeap\Scripts\Editor\MLVersionMenuItem.cs" />
     <Compile Include="Assets\UnityARKitPlugin\Examples\UnityParticlePainter\HSVPicker\Editor\BoxSliderEditor.cs" />
     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Editor\UnityARBuildPostprocessor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Controller.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\HandTracking.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\ImageCapture.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\ImageTracking.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\MCA.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\MediaPlayer.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Meshing.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Persistence.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Planes.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Raycast.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\VideoCapture.txt" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Models\Controller\Shaders\ControllerDepthMask.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Plugins\Lumin\manifest.xml" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\BasicWorldSpace.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\MeshWorldSpace.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\PlaneEdge.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\PointCloud.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\WorldVerticalWithFilter.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\WorldXZWithColor.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\WorldXZWithLerp.shader" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Libs\Editor\LuminUnityEditor.xml" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Libs\LuminUnity.xml" />
-    <None Include="Assets\MLSpectatorML\MagicLeap\Soundfield\Release Notes.txt" />
     <None Include="Assets\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\InstancedSurfaceShader.shader" />
     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\MobileARShadow.shader" />

@@ -1,4 +1,3 @@
-#if UNITY_IOS
 using System;
 using UnityEngine;
 using UnityEngine.XR.iOS;
@@ -124,16 +123,16 @@ namespace Utils
 
 		public static implicit operator Matrix4x4(serializableUnityARMatrix4x4 rValue)
 		{
-#if UNITY_2017_1_OR_NEWER
+			#if UNITY_2017_1_OR_NEWER		
 			return new Matrix4x4(rValue.column0, rValue.column1, rValue.column2, rValue.column3);
-#else
+			#else
 			Matrix4x4 mRet = new Matrix4x4 ();
 			mRet.SetColumn (0, rValue.column0);
 			mRet.SetColumn (1, rValue.column1);
 			mRet.SetColumn (2, rValue.column2);
 			mRet.SetColumn (3, rValue.column3);
 			return mRet;
-#endif
+			#endif
 		}
 
 	};
@@ -329,7 +328,7 @@ namespace Utils
 
 		}
 
-#if !UNITY_EDITOR
+		#if !UNITY_EDITOR
 		public static implicit operator serializableFaceGeometry(ARFaceGeometry faceGeom)
 		{
 			if (faceGeom.vertexCount != 0 && faceGeom.textureCoordinateCount != 0 && faceGeom.triangleCount != 0)
@@ -354,7 +353,7 @@ namespace Utils
 				return new serializableFaceGeometry(null, null, null);
 			}
 		}
-#endif //!UNITY_EDITOR
+		#endif //!UNITY_EDITOR
 
 		public Vector3 [] Vertices {
 			get {
@@ -424,12 +423,12 @@ namespace Utils
 		}
 
 
-#if UNITY_EDITOR
+		#if UNITY_EDITOR
 		public static implicit operator ARFaceAnchor(serializableUnityARFaceAnchor rValue)
 		{
 			return new ARFaceAnchor(rValue);
 		}
-#else
+		#else
 		public static implicit operator serializableUnityARFaceAnchor(ARFaceAnchor rValue)
 		{
 			serializableUnityARMatrix4x4 wt = rValue.transform;
@@ -437,7 +436,7 @@ namespace Utils
 			byte[] idstr = Encoding.UTF8.GetBytes (rValue.identifierStr);
 			return new serializableUnityARFaceAnchor(wt, sfg, rValue.blendShapes, idstr);
 		}
-#endif
+		#endif
 	};
 
 
@@ -549,4 +548,3 @@ namespace Utils
 
 	};
 }
-#endif

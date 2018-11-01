@@ -1,6 +1,4 @@
-﻿#if UNITY_IOS
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Networking.PlayerConnection;
 using System.Text;
 using Utils;
@@ -51,7 +49,7 @@ namespace UnityEngine.XR.iOS
 
 		void InitializeARKit(serializableARKitInit sai)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 
 			//get the config and runoption from editor and use them to initialize arkit on device
 			Application.targetFrameRate = 60;
@@ -65,12 +63,12 @@ namespace UnityEngine.XR.iOS
 			UnityARSessionNativeInterface.ARAnchorUpdatedEvent += ARAnchorUpdated;
 			UnityARSessionNativeInterface.ARAnchorRemovedEvent += ARAnchorRemoved;
 
-#endif
+			#endif
 		}
 
 		void InitializeARKitFaceTracking(serializableARKitInit sai)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 
 			//get the config and runoption from editor and use them to initialize arkit for facetracking on device
 			Application.targetFrameRate = 60;
@@ -84,7 +82,7 @@ namespace UnityEngine.XR.iOS
 			UnityARSessionNativeInterface.ARFaceAnchorUpdatedEvent += ARFaceAnchorUpdated;
 			UnityARSessionNativeInterface.ARFaceAnchorRemovedEvent += ARFaceAnchorRemoved;
 
-#endif
+			#endif
 		}
 
 		public void ARFrameUpdated(UnityARCamera camera)
@@ -114,26 +112,26 @@ namespace UnityEngine.XR.iOS
 
 		public void ARFaceAnchorAdded(ARFaceAnchor faceAnchor)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 			serializableUnityARFaceAnchor serFaceAnchor = faceAnchor;
 			SendToEditor (ConnectionMessageIds.addFaceAnchorMsgeId, serFaceAnchor);
-#endif
+			#endif
 		}
 
 		public void ARFaceAnchorUpdated(ARFaceAnchor faceAnchor)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 			serializableUnityARFaceAnchor serFaceAnchor = faceAnchor;
 			SendToEditor (ConnectionMessageIds.updateFaceAnchorMsgeId, serFaceAnchor);
-#endif
+			#endif
 		}
 
 		public void ARFaceAnchorRemoved(ARFaceAnchor faceAnchor)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 			serializableUnityARFaceAnchor serFaceAnchor = faceAnchor;
 			SendToEditor (ConnectionMessageIds.removeFaceAnchorMsgeId, serFaceAnchor);
-#endif
+			#endif
 		}
 
 		void EditorConnected(int playerID)
@@ -152,13 +150,13 @@ namespace UnityEngine.XR.iOS
 			}
 
 			DisconnectFromEditor ();
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 			if (m_session != null)
 			{
 				m_session.Pause();
 				m_session = null;
 			}
-#endif
+			#endif
 		}
 
 
@@ -180,13 +178,12 @@ namespace UnityEngine.XR.iOS
 
 		public void DisconnectFromEditor()
 		{
-#if UNITY_2017_1_OR_NEWER
+			#if UNITY_2017_1_OR_NEWER		
 			playerConnection.DisconnectAll();
-#endif
+			#endif
 		}
 
 
 	}
 
 }
-#endif

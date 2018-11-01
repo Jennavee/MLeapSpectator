@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.XR.MagicLeap;
-
 public class ControllerSync : MonoBehaviour
 {
 

@@ -1,5 +1,3 @@
-#if UNITY_IOS
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -230,14 +228,14 @@ namespace UnityEngine.XR.iOS {
 	    }
 
 
-#if UNITY_EDITOR
+		#if UNITY_EDITOR
 		private bool IsARKitWorldTrackingSessionConfigurationSupported() {
 			return true;
 		}
-#else
+		#else
         [DllImport("__Internal")]
         private static extern bool IsARKitWorldTrackingSessionConfigurationSupported();
-#endif
+		#endif
 	}
 
 	public struct ARKitFaceTrackingConfiguration
@@ -253,14 +251,14 @@ namespace UnityEngine.XR.iOS {
 			this.enableLightEstimation = enableLightEstimation;
 		}
 
-#if UNITY_EDITOR
+		#if UNITY_EDITOR
 		private bool IsARKitFaceTrackingConfigurationSupported() {
 			return true;
 		}
-#else
+		#else
 		[DllImport("__Internal")]
 		private static extern bool IsARKitFaceTrackingConfigurationSupported();
-#endif
+		#endif
 
 	}
 
@@ -731,7 +729,7 @@ namespace UnityEngine.XR.iOS {
 #endregion
 
 #region Face Anchors
-#if !UNITY_EDITOR
+		#if !UNITY_EDITOR
 		[MonoPInvokeCallback(typeof(internal_ARFaceAnchorAdded))]
 		static void _face_anchor_added(UnityARFaceAnchorData anchor)
 		{
@@ -760,7 +758,7 @@ namespace UnityEngine.XR.iOS {
 				ARFaceAnchorRemovedEvent(arFaceAnchor);
 			}
 		}
-#endif
+		#endif
 #endregion
 
 	    [MonoPInvokeCallback(typeof(ARSessionFailed))]
@@ -795,21 +793,21 @@ namespace UnityEngine.XR.iOS {
 
         public void RunWithConfigAndOptions(ARKitWorldTrackingSessionConfiguration config, UnityARSessionRunOption runOptions)
         {
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
             StartWorldTrackingSessionWithOptions (m_NativeARSession, config, runOptions);
-#else
+			#else
 			CreateRemoteWorldTrackingConnection(config, runOptions);
-#endif
+			#endif
         }
 
 	    public void RunWithConfig(ARKitWorldTrackingSessionConfiguration config)
 	    {
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 	        StartWorldTrackingSession(m_NativeARSession, config);
-#else
+			#else
 			UnityARSessionRunOption runOptions = UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking;
 			CreateRemoteWorldTrackingConnection(config, runOptions);
-#endif
+			#endif
 	    }
 
 	    public void Run()
@@ -819,35 +817,35 @@ namespace UnityEngine.XR.iOS {
 
         public void RunWithConfigAndOptions(ARKitSessionConfiguration config, UnityARSessionRunOption runOptions)
         {
-#if !UNITY_EDITOR
+            #if !UNITY_EDITOR
             StartSessionWithOptions (m_NativeARSession, config, runOptions);
-#endif
+            #endif
         }
 
         public void RunWithConfig(ARKitSessionConfiguration config)
         {
-#if !UNITY_EDITOR
+            #if !UNITY_EDITOR
             StartSession(m_NativeARSession, config);
-#endif
+            #endif
         }
             
 		public void RunWithConfigAndOptions(ARKitFaceTrackingConfiguration config, UnityARSessionRunOption runOptions)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 			StartFaceTrackingSessionWithOptions (m_NativeARSession, config, runOptions);
-#else
+			#else
 			CreateRemoteFaceTrackingConnection(config, runOptions);
-#endif
+			#endif
 		}
 
 		public void RunWithConfig(ARKitFaceTrackingConfiguration config)
 		{
-#if !UNITY_EDITOR
+			#if !UNITY_EDITOR
 			StartFaceTrackingSession(m_NativeARSession, config);
-#else
+			#else
 			UnityARSessionRunOption runOptions = UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking;
 			CreateRemoteFaceTrackingConnection(config, runOptions);
-#endif
+			#endif
 		}
 
 
@@ -897,7 +895,7 @@ namespace UnityEngine.XR.iOS {
         {
 #if !UNITY_EDITOR
             return SessionAddUserAnchor(m_NativeARSession, anchorData);
-#else
+#else 
             return new UnityARUserAnchorData();
 #endif
         }
@@ -906,7 +904,7 @@ namespace UnityEngine.XR.iOS {
 #if !UNITY_EDITOR
             UnityARUserAnchorData data = AddUserAnchor(UnityARUserAnchorData.UnityARUserAnchorDataFromGameObject(go)); 
             return data;  
-#else
+#else 
             return new UnityARUserAnchorData();
 #endif
         }
@@ -920,4 +918,3 @@ namespace UnityEngine.XR.iOS {
         }
 	}
 }
-#endif

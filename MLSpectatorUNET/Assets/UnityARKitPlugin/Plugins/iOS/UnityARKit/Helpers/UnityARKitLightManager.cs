@@ -1,6 +1,4 @@
-﻿#if UNITY_IOS
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
@@ -94,6 +92,3 @@ public class UnityARKitLightManager : MonoBehaviour {
 		RenderSettings.ambientMode = AmbientMode.Custom;
 	}
 }
-
-
-#endif
