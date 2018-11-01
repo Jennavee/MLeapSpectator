@@ -1,3 +1,5 @@
+
+#if UNITY_IOS
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -69,7 +71,7 @@ public class UnityARBuildPostprocessor
 	private static void OnPostprocessBuildIOS(string pathToBuiltProject)
 	{
 		// We use UnityEditor.iOS.Xcode API which only exists in iOS editor module
-		#if UNITY_IOS
+#if UNITY_IOS
 
 		string projPath = pathToBuiltProject + "/Unity-iPhone.xcodeproj/project.pbxproj";
 
@@ -125,6 +127,8 @@ public class UnityARBuildPostprocessor
 		}
 
 		File.WriteAllText(projPath, proj.WriteToString());
-		#endif // #if UNITY_IOS
+#endif // #if UNITY_IOS
 	}
 }
+
+#endif

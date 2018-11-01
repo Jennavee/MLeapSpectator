@@ -1,16 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if PLATFORM_LUMIN
 using UnityEngine.XR.MagicLeap;
-#endif
 using UnityEngine.UI;
 
-public class MLMenuControl : MonoBehaviour
-{
-
-
-#if PLATFORM_LUMIN
+public class MLMenuControl : MonoBehaviour {
 
     public GameObject selectedTarg;
     int buttonInd;
@@ -106,5 +100,5 @@ public class MLMenuControl : MonoBehaviour
         selectedTarg.GetComponent<Image>().color = Color.green;
 
     }
-#endif
+
 }

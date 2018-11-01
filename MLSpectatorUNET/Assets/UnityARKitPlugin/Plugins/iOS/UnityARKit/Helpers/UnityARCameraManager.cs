@@ -1,3 +1,5 @@
+#if UNITY_IOS
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -80,3 +82,4 @@ public class UnityARCameraManager : MonoBehaviour {
 	}
 
 }
+#endif

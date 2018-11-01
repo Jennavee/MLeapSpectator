@@ -1,3 +1,5 @@
+#if UNITY_IOS
+
 using System;
 using System.Collections.Generic;
 
@@ -26,7 +28,7 @@ namespace UnityEngine.XR.iOS
 		
 		// Update is called once per frame
 		void Update () {
-			#if UNITY_EDITOR   //we will only use this script on the editor side, though there is nothing that would prevent it from working on device
+#if UNITY_EDITOR   //we will only use this script on the editor side, though there is nothing that would prevent it from working on device
 			if (Input.GetMouseButtonDown (0)) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit hit;
@@ -42,7 +44,7 @@ namespace UnityEngine.XR.iOS
 					m_HitTransform.rotation = hit.transform.rotation;
 				}
 			}
-			#else
+#else
 			if (Input.touchCount > 0 && m_HitTransform != null)
 			{
 				var touch = Input.GetTouch(0);
@@ -72,7 +74,7 @@ namespace UnityEngine.XR.iOS
                     }
 				}
 			}
-			#endif
+#endif
 
 		}
 
@@ -80,3 +82,4 @@ namespace UnityEngine.XR.iOS
 	}
 }
 
+#endif

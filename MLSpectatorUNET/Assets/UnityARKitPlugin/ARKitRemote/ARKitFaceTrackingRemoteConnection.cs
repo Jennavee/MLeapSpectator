@@ -1,4 +1,4 @@
-﻿
+﻿#if UNITY_IOS
 using UnityEngine;
 using UnityEngine.Networking.PlayerConnection;
 using System.Text;
@@ -213,4 +213,5 @@ namespace UnityEngine.XR.iOS
 
 	}
 }
+#endif
 #endif

@@ -293,9 +293,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>/Users/jenna/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/jenna/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -314,6 +311,18 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>/Users/jenna/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="LuminUnityEditor">
+      <HintPath>Assets/MLSpectatorML/MagicLeap/Libs/Editor/LuminUnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA.Runtime">
+      <HintPath>Assets/MLSpectatorML/MagicLeap/Soundfield/MSA.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="LuminUnity">
+      <HintPath>Assets/MLSpectatorML/MagicLeap/Libs/LuminUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="MSA.Editor">
+      <HintPath>Assets/MLSpectatorML/MagicLeap/Soundfield/Editor/MSA.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity2017/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -326,8 +335,69 @@
     <Compile Include="Assets\ControllerSync.cs" />
     <Compile Include="Assets\IPManager.cs" />
     <Compile Include="Assets\LoadIn.cs" />
-    <Compile Include="Assets\MLEvent.cs" />
-    <Compile Include="Assets\MLMenuControl.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\BaseRaycast.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\BitMask.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\ComboRaycastController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\ComboRaycastEyes.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\ComboRaycastHead.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\ControllerConnectionHandler.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\HandTracking.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\HeadposeCanvas.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\MLPersistentPoint.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\Planes.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\PrivilegeRequester.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\WorldRaycastController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\WorldRaycastEyes.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\CoreComponents\WorldRaycastHead.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Common\DestroyAfterTime.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Common\FaceCamera.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Common\FaceTargetPosition.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Common\PathAroundObject.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Common\TransformFollower.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\ControllerFeedbackExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\HandTrackingExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\ImageCaptureExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\ImageTrackingExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\MCAExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\MediaPlayerExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\MeshingExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\PersistenceExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\PlanesExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\RaycastExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\ControllerStatsText.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\ControllerStatusIndicator.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\ControllerStatusText.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\ControllerTransform.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\MediaPlayerButton.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\MediaPlayerSlider.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\MediaPlayerToggle.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\PlaceFromCamera.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Utility\VirtualPointer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\VideoCaptureExample.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\ContentBindingVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\ControllerVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\DeepSeaExplorerLauncher.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\DeepSpaceExplorerController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\DeepSpaceExplorerLauncher.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\HandTrackingVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\ImageCaptureVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\ImageTrackingVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\KeyPoseVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MasterMaterialController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MaterialBlendOffsetController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MaterialController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MaterialForegroundColorController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MaterialThresholdController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MaterialTilingController.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\MeshingVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\PCFStatusText.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\PCFVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\PlaneVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\RaycastVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Examples\Scripts\Visualizers\VideoCaptureVisualizer.cs" />
+    <Compile Include="Assets\MLSpectatorML\MagicLeap\Scripts\MLVersion.cs" />
+    <Compile Include="Assets\MLSpectatorML\MLEvent.cs" />
+    <Compile Include="Assets\MLSpectatorML\MLMenuControl.cs" />
     <Compile Include="Assets\NetControl.cs" />
     <Compile Include="Assets\NetDiscovery.cs" />
     <Compile Include="Assets\PlatformHUD.cs" />
@@ -397,6 +467,29 @@
     <Compile Include="Assets\UnityARKitPlugin\UnityARKitPluginSettings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Controller.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\HandTracking.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\ImageCapture.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\ImageTracking.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\MCA.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\MediaPlayer.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Meshing.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Persistence.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Planes.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\Raycast.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Documentation\VideoCapture.txt" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Models\Controller\Shaders\ControllerDepthMask.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Plugins\Lumin\manifest.xml" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\BasicWorldSpace.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\MeshWorldSpace.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\PlaneEdge.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\PointCloud.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\WorldVerticalWithFilter.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\WorldXZWithColor.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Examples\Shaders\WorldXZWithLerp.shader" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Libs\Editor\LuminUnityEditor.xml" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Libs\LuminUnity.xml" />
+    <None Include="Assets\MLSpectatorML\MagicLeap\Soundfield\Release Notes.txt" />
     <None Include="Assets\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\InstancedSurfaceShader.shader" />
     <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\MobileARShadow.shader" />
